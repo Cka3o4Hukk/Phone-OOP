@@ -1,37 +1,21 @@
 class Employee:
     vacation_days = 28
+
     def __init__(self, first_name, second_name, gender):
         self.first_name = first_name
         self.second_name = second_name
         self.gender = gender
-        
-
-employee1 = Employee(first_name = 'Роберт', second_name = 'Крузо', gender = 'м')
-employee2 = Employee(first_name = 'Миша', second_name = 'Соколов', gender = 'м')
+        self.remaining_vacation_days = Employee.vacation_days
 
 
+    def consume_vacation(self, days:int) -> int:
+        self.days = days
+        result = Employee.remaining_vacation_days -= days
+        print(result) 
+    
 
-print(
-    f'Имя: {employee1.first_name}, ' 
-    f'Фамилия: {employee1.second_name}, '
-    f'Пол: {employee1.gender}, ' 
-    f'Отпускных дней в году: {Employee.vacation_days}.')
+employee1 = Employee('Роберт', 'Крузо', 'м')
 
-print(
-    f'Имя: {employee2.first_name}, ' 
-    f'Фамилия: {employee2.second_name}, ' 
-    f'Пол: {employee2.gender}, ' 
-    f'Отпускных дней в году: {Employee.vacation_days}.')
-
-
-
-
-
-
-
-
-
-
-
+employee1.consume_vacation(7)
 
 
