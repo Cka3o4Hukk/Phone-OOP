@@ -7,15 +7,11 @@ class Employee:
         self.gender = gender
         self.remaining_vacation_days = Employee.vacation_days
 
-
     def consume_vacation(self, days:int) -> int:
         self.days = days
-        result = Employee.remaining_vacation_days -= days
-        print(result) 
-    
+        self.remaining_vacation_days -= days
 
-employee1 = Employee('Роберт', 'Крузо', 'м')
-
-employee1.consume_vacation(7)
+    def get_vacation_details(self) -> str:
+        return f'Остаток отпускных дней: {self.remaining_vacation_days}'
 
 
